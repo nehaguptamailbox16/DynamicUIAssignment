@@ -1,0 +1,6 @@
+[
+  {"field-name":"name", "type":"text"},
+  {"field-name":"age", "type":"number"},
+  {"field-name":"gender", "type":"dropdown", "options":["male", "female", "other"]},
+  {"field-name":"address", "type":"multiline"}
+]

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HubblerAssigment</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="report_fragment_label">Report</string>
+    <string name="user_form_fragment_label">User</string>
+
+    <string name="no_report">No Reports</string>
+    <string name="click_to_add_report">Click + to add report</string>
+
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

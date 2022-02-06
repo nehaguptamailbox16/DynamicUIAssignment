@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ReportFragment">
+
+    <fragment
+        android:id="@+id/ReportFragment"
+        android:name="com.example.hubblerassigment.ui.ReportFragment"
+        android:label="@string/report_fragment_label"
+        tools:layout="@layout/fragment_report">
+
+        <action
+            android:id="@+id/action_ReportFragment_to_UserFormFragment"
+            app:destination="@id/UserFormFragment"
+            />
+
+<!--        <argument-->
+<!--            android:name="userDetail"-->
+<!--            app:argType=""-->
+<!--            app:nullable="true"-->
+<!--            android:defaultValue="@null"/>-->
+    </fragment>
+    <fragment
+        android:id="@+id/UserFormFragment"
+        android:name="com.example.hubblerassigment.ui.UserFormFragment"
+        android:label="@string/user_form_fragment_label"
+        tools:layout="@layout/fragment_user_form">
+
+        <action
+            android:id="@+id/action_UserFormFragment_to_ReportFragment"
+            app:destination="@id/ReportFragment"
+            app:popUpTo="@+id/ReportFragment"
+            />
+
+          </fragment>
+</navigation>
