@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/width_10"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:id="@+id/textview_headingone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/width_10"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintEnd_toStartOf="@+id/textview_headingtwo"
+        />
+    <TextView
+        android:id="@+id/textview_headingtwo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textview_headingone"
+        />
+
+    <TextView
+        android:id="@+id/textview_valueone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textview_headingone"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/width_10"
+        android:textSize="@dimen/text_size_16"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/textview_valuetwo"
+        android:layout_marginTop="@dimen/width_10"
+        />
+    <TextView
+        android:id="@+id/textview_valuetwo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_16"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/width_10"
+        app:layout_constraintTop_toBottomOf="@id/textview_headingtwo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textview_valueone"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
