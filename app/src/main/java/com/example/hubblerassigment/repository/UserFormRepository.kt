@@ -16,7 +16,7 @@ class UserFormRepository(private val context :Context) {
 
     fun getUserForm() : LiveData<List<UserForm>> {
         val jsonFileString: String? =
-            Utils.getJsonFromAssets(context, "UserScenarioTwo.json")
+            Utils.getJsonFromAssets(context, "UserScenarioOne.json")
         val listUserType: Type = object : TypeToken<List<UserForm?>?>() {}.type
         val users: List<UserForm> = Gson().fromJson(jsonFileString, listUserType)
         userFormData.value = users

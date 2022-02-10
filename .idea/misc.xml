@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/HubblerAssigment/HubblerAssigment/app/src/main/res/layout/fragment_report.xml" value="0.15081521739130435" />
+        <entry key="..\:/HubblerAssigment/HubblerAssigment/app/src/main/res/layout/fragment_user_form.xml" value="0.15081521739130435" />
+        <entry key="..\:/HubblerAssigment/HubblerAssigment/app/src/main/res/layout/list_report_fragment.xml" value="0.22" />
+        <entry key="..\:/HubblerAssigment/HubblerAssigment/app/src/main/res/layout/list_user_form.xml" value="0.15081521739130435" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

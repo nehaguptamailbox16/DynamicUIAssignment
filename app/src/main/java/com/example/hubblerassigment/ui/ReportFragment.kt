@@ -1,13 +1,21 @@
 package com.example.hubblerassigment.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hubblerassigment.R
+import com.example.hubblerassigment.adapter.ReportAdapter
 import com.example.hubblerassigment.databinding.FragmentReportBinding
+import com.example.hubblerassigment.utils.Utils
+import org.json.JSONArray
+import org.json.JSONObject
+import java.util.*
+import kotlin.collections.HashMap
+import kotlin.collections.LinkedHashMap
 
 class ReportFragment : Fragment() {
 
@@ -33,29 +41,38 @@ class ReportFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val userFormData = arguments?.get("userData")
-        println("$userFormData")
-        if(userFormData != null){
-            binding.textviewNoreports.visibility= View.GONE
-            binding.textviewAddreport.visibility= View.GONE
-           setUserFormData(userFormData as Map<String, String>)
+        getArgumentsFromReport()
+
+    }
+
+    private fun getArgumentsFromReport(){
+        if(Utils.readDataFromJSON(requireContext())!=null) {
+            val jsonObjectUser = JSONObject(Utils.readDataFromJSON(requireContext()))
+
+            if (jsonObjectUser.keys().hasNext()) {
+                binding.textviewNoreports.visibility = View.GONE
+                binding.textviewAddreport.visibility = View.GONE
+                binding.recyclerViewReport.visibility = View.VISIBLE
+
+                val arrayListUser = ArrayList<JSONArray>()
+
+                val iter: Iterator<String> = jsonObjectUser.keys()
+                while (iter.hasNext()) {
+                    val key = iter.next()
+                    arrayListUser.add(jsonObjectUser.get(key) as JSONArray)
+                }
+                setAdapter(arrayListUser)
+            }
         }
     }
 
-    private fun setUserFormData(userFormData: Map<String,String>) {
-        var position = 1
-        for((key, value) in userFormData) {
-            if(position == 1) {
-                binding.textviewValueone.text = value
-                binding.textviewHeadingone.text = key
-            }
-            if(position == 2){
-                binding.textviewValuetwo.text = value
-                binding.textviewHeadingtwo.text = key
-            }
-            position++
-        }
+    private fun setAdapter(arrList: ArrayList<JSONArray>) {
+        val recyclerView = binding.recyclerViewReport
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        val adapter = ReportAdapter(arrList)
+        recyclerView.adapter = adapter
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -46,52 +46,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_noreports"/>
 
-    <TextView
-        android:id="@+id/textview_headingone"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="@dimen/width_10"
-        android:textSize="@dimen/text_size_14"
-        app:layout_constraintEnd_toStartOf="@+id/textview_headingtwo"
-        android:layout_marginTop="@dimen/width_70"
-        />
-    <TextView
-        android:id="@+id/textview_headingtwo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/width_70"
-        android:textSize="@dimen/text_size_14"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textview_headingone"
-        />
-
-    <TextView
-        android:id="@+id/textview_valueone"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textview_headingone"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="@dimen/width_10"
-        android:textSize="@dimen/text_size_16"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toStartOf="@+id/textview_valuetwo"
-        android:layout_marginTop="@dimen/width_10"
-        />
-    <TextView
-        android:id="@+id/textview_valuetwo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/text_size_16"
-        android:textColor="@color/black"
-        android:layout_marginTop="@dimen/width_10"
-        app:layout_constraintTop_toBottomOf="@id/textview_headingtwo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textview_valueone"
-        />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -102,4 +56,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewReport"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_marginTop="@dimen/width_70"
+        android:visibility="gone"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
